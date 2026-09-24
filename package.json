@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fontsource/fira-code": "^5.2.6",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.23.12",
     "next": "15.4.10",
     "react": "19.1.0",

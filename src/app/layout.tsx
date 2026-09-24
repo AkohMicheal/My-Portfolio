@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "@fontsource/fira-code";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://michealakohportfolio.vercel.app"),
   title: "AkohTech | Portfolio",
   description:
     "Micheal Akoh — Software Engineer specializing in full-stack web development, AI/ML systems, and cloud infrastructure. React, Next.js, Node.js, Python, AWS. View projects and case studies.",
@@ -33,11 +36,11 @@ export const metadata: Metadata = {
     title: "AkohTech | Portfolio",
     description:
       "Micheal Akoh — Software Engineer specializing in full-stack web development, AI/ML systems, and cloud infrastructure. React, Next.js, Node.js, Python, AWS. View projects and case studies.",
-    url: "https://my-portfolio-livid-zeta-95.vercel.app/",
+    url: "https://michealakohportfolio.vercel.app/",
     siteName: "AkohTech",
     images: [
       {
-        url: "https://my-portfolio-livid-zeta-95.vercel.app/favicon.ico",
+        url: "https://michealakohportfolio.vercel.app/favicon.ico",
         width: 1200,
         height: 630,
         alt: "AkohTech Portfolio",
@@ -59,7 +62,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head></head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
