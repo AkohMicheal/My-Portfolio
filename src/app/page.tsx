@@ -1,8 +1,6 @@
-// src/app/page.tsx
 import dynamic from 'next/dynamic';
 import Loading from './loading';
 
-// Dynamically import components that are not immediately needed
 const ProjectsSection = dynamic(
   () => import('@/components/projects/ProjectsSection'),
   {
@@ -27,14 +25,24 @@ const ExperienceSection = dynamic(
   }
 );
 
+const AboutSection = dynamic(
+  () => import('@/components/about/AboutSection'),
+  {
+    loading: () => <Loading />,
+    ssr: true
+  }
+);
 
+const SkillsSection = dynamic(
+  () => import('@/components/skills/SkillsSection'),
+  {
+    loading: () => <Loading />,
+    ssr: true
+  }
+);
 
-// Keep critical components imported normally
 import Navbar from "@/components/navigationbar/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
-import AboutSection from "@/components/about/AboutSection";
-import SkillsSection from "@/components/skills/SkillsSection";
-
 import Footer from "@/components/footer/Footer";
 
 export default function ProfilePage() {

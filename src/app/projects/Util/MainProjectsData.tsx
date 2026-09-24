@@ -46,4 +46,11 @@ export const mainprojects: Project[] = [
     image: "/assets/project5.png",
     link: "https://www.gloryvillesolutions.com.ng/"
   },
+  {
+    title: "Deepfake Detection System",
+    description: "A machine learning-based web application designed to detect deepfake videos. Utilizes a pre-trained convolutional neural network (CNN) model to analyze video frames and classify them as authentic or manipulated, providing users with a confidence score.",
+    tags: ["Python", "TensorFlow", "OpenCV", "Flask", "Bootstrap"],
+    image: "/assets/project6.png",
+    link: "https://deepfake-scanner-web.vercel.app/"
+  }
 ];

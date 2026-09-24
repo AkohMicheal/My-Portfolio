@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "All Projects", href: "/projects" },
     {
       name: "Resume",
-      href: "https://docs.google.com/document/d/1tSUfrUYKSxyyFH3X2DCi4rxsCzmRJck1pP-EzwHBvpI/export?format=pdf",
+      href: "https://drive.google.com/file/d/1edfv5JOUJO6ppSqy39pqgHvW1jLwoRxV/view?usp=sharing",
       external: true,
       download: true,
     },

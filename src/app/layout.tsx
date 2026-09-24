@@ -5,7 +5,7 @@ import "@fontsource/fira-code";
 export const metadata: Metadata = {
   title: "AkohTech | Portfolio",
   description:
-    "Creative Portfolio of AkohTech showcasing innovative web design, development, and creative solutions.",
+    "Micheal Akoh — Software Engineer specializing in full-stack web development, AI/ML systems, and cloud infrastructure. React, Next.js, Node.js, Python, AWS. View projects and case studies.",
   keywords: [
     "AkohTech",
     "Portfolio",
@@ -14,13 +14,25 @@ export const metadata: Metadata = {
     "Next.js",
     "Tailwind CSS",
     "Frontend Developer",
+    "Software Engineer",
+    "Full-Stack Developer",
+    "React Developer",
+    "Node.js",
+    "Python",
+    "AWS",
+    "Machine Learning",
+    "AI",
+    "Deepfake Detection",
+    "Cloud Infrastructure",
+    "Micheal Akoh",
+    "Lagos Developer",
   ],
   authors: [{ name: "AkohTech" }],
   creator: "AkohTech",
   openGraph: {
     title: "AkohTech | Portfolio",
     description:
-      "Creative Portfolio of AkohTech showcasing innovative web design, development, and creative solutions.",
+      "Micheal Akoh — Software Engineer specializing in full-stack web development, AI/ML systems, and cloud infrastructure. React, Next.js, Node.js, Python, AWS. View projects and case studies.",
     url: "https://my-portfolio-livid-zeta-95.vercel.app/",
     siteName: "AkohTech",
     images: [

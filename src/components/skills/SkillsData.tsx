@@ -1,4 +1,3 @@
-// src/components/skills/skillsData.ts
 import nodeIcon from "./../../../public/assets/nodejs-logo.svg";
 import angularIcon from "./../../../public/assets/angular.png";
 import cssIcon from "./../../../public/assets/css3.jpeg";
@@ -25,23 +24,23 @@ export const skillIcons = [
 
 export const skillDetails = [
   {
-    label: "Front-End",
-    items: ["HTML", "CSS", "JavaScript", "Typescript", "React", "NextJS", "Angular", "Vue.js", "Tailwind CSS", "Bootstrap"],
+    label: "Languages",
+    items: ["JavaScript (ES6+)", "TypeScript", "Python", "HTML5", "CSS3", "PHP", "SQL"],
   },
   {
-    label: "Back-End",
-    items: ["Node.js", "Python", "Django", "Express"],
+    label: "Frontend & Frameworks",
+    items: ["React", "Next.js", "Angular", "Tailwind CSS", "Bootstrap 5", "Framer Motion", "jQuery"],
   },
   {
-    label: "Databases",
-    items: ["MySQL", "PostgreSQL", "SQLite", "MongoDB", "Prisma"],
+    label: "Backend & Cloud",
+    items: ["Node.js", "Express.js", "FastAPI", "MongoDB", "MySQL", "PostgreSQL", "AWS (EC2, RDS)", "REST APIs"],
   },
   {
-    label: "Tools & Platforms",
-    items: ["Git", "Docker", "AWS", "Vercel", "Netlify", "Heroku", "Firebase", "Railway", "C-Panel", "Cloudinary"],
+    label: "AI/ML & Research",
+    items: ["TensorFlow/Keras", "OpenCV", "MTCNN", "Deep Learning (GRU, LSTM, RNN)", "XAI (Grad-CAM)"],
   },
   {
-    label: "Others",
-    items: ["RESTful APIs", "GraphQL", "Agile Methodologies", "CI/CD", "Unit Testing", "Web Accessibility (a11y)", "Responsive Design", "Cross-Browser Compatibility", "Version Control", "Code Review", "Debugging", "Performance Optimization", "SDLC", "Design Patterns", "CMS", "Google Analysis"],
+    label: "Tools & DevOps",
+    items: ["Git/GitHub", "Docker", "CI/CD", "Figma", "Sanity CMS", "WordPress", "Shopify", "Vercel", "AWS"],
   },
 ];

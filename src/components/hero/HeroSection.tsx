@@ -1,4 +1,5 @@
-// src/components/hero/HeroSection.tsx
+'use client';
+
 import React from "react";
 import HeroText from "./HeroText";
 import HeroImage from "./HeroImage";
