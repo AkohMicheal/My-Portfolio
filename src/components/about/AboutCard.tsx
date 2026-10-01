@@ -8,9 +8,9 @@ interface AboutCardProps {
 
 const AboutCard: React.FC<AboutCardProps> = ({ item }) => {
   return (
-    <div className="p-5 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-      <h3 className="text-lg font-bold">{item.title}</h3>
-      <p className="mt-2 text-gray-700">{item.description}</p>
+    <div className="glass-panel glass-panel-hover p-5 rounded-xl border border-zinc-800">
+      <h3 className="text-lg font-bold text-zinc-100">{item.title}</h3>
+      <p className="mt-2 text-zinc-400 text-sm leading-relaxed">{item.description}</p>
     </div>
   );
 };

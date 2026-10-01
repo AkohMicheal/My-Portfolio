@@ -1,30 +1,54 @@
+// src/components/experience/ExperienceData.tsx
+
 export interface ExperienceItem {
   title: string;
   company: string;
-  date?: string;
-  description: string;
+  location: string;
+  date: string;
+  roleType: string;
+  highlights: string[];
+  technologies: string[];
 }
 
 export const experiences: ExperienceItem[] = [
   {
     title: "Frontend Developer Intern",
     company: "Lampnet Solution Technologies",
-    date: "June 2025 - August 2026",
-    description:
-      "Enhanced cross-regional accessibility across multi-language enterprise sites using React and Next.js. Accelerated development by translating complex Figma layouts into pixel-accurate, reusable components ahead of sprint deadlines. Optimized frontend performance with strict image/asset optimization, achieving near-instant async content updates across 3+ concurrent client projects.",
+    location: "Hybrid / Nigeria",
+    date: "June 2025 – August 2026",
+    roleType: "Enterprise Client Engineering",
+    highlights: [
+      "Engineered high-performance, multi-language enterprise web applications utilizing React and Next.js, elevating global accessibility standards.",
+      "Translated complex Figma design systems into reusable, pixel-accurate HTML5/CSS3/Tailwind components ahead of sprint deadlines.",
+      "Optimized frontend bundle sizes and web asset pipelines, enabling near-instant asynchronous content updates across 3+ concurrent client projects.",
+      "Maintained strict software quality through Git-based code reviews, mobile-first responsiveness, and structured QA checklists."
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Bootstrap 5", "Figma", "REST APIs", "Git"]
   },
   {
-    title: "Infrastructure / System Engineer Intern",
+    title: "DevOps & Infrastructure Intern",
     company: "Bincom Dev Center",
+    location: "Nigeria",
     date: "May 2025",
-    description:
-      "Provisioned and managed scalable AWS cloud environments (EC2, RDS) ensuring robust application uptime. Streamlined CI pipelines and reduced manual deployment overhead by configuring LAMP stack servers aligned with modern DevOps best practices.",
+    roleType: "Cloud & Systems",
+    highlights: [
+      "Provisioned and managed scalable AWS cloud environments including EC2 compute instances and RDS databases for robust application uptime.",
+      "Configured and hardened LAMP stack servers aligned with modern security benchmarks and DevOps best practices.",
+      "Streamlined CI/CD deployment workflows, significantly reducing manual server intervention and deployment overhead."
+    ],
+    technologies: ["AWS EC2", "AWS RDS", "Linux/LAMP", "Docker", "DevOps", "CI/CD", "Bash"]
   },
   {
-    title: "Full-Stack Web Developer",
+    title: "Full-Stack Software Developer",
     company: "AkohTech Labs / Freelance",
-    date: "2024 - Present",
-    description:
-      "Delivered dynamic client portals, e-commerce platforms, and interactive learning systems using Node.js, MongoDB, and custom REST APIs. Expanded client digital capabilities by customizing WordPress/Shopify solutions. Resolved critical cross-browser compatibility issues across Chrome, Firefox, Safari, and mobile viewports.",
+    location: "Remote",
+    date: "2024 – Present",
+    roleType: "Full Lifecycle Delivery",
+    highlights: [
+      "Architected dynamic client portals, e-commerce applications, and interactive learning systems from the ground up using Node.js and MongoDB.",
+      "Integrated custom third-party payment gateways (Paystack), headless Sanity CMS APIs, and WebSocket services.",
+      "Resolved cross-browser compatibility and responsive performance issues across mobile and desktop viewports for global users."
+    ],
+    technologies: ["Next.js", "Node.js", "MongoDB", "Express.js", "PostgreSQL", "Sanity CMS", "Socket.io", "Paystack"]
   },
 ];

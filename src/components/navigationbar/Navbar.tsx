@@ -2,154 +2,189 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaInstagram, FaLinkedin, FaFacebookF } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { FiDownload } from "react-icons/fi";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const menuItems = [
-    { name: "All Projects", href: "/projects" },
-    {
-      name: "Resume",
-      href: "https://drive.google.com/file/d/1edfv5JOUJO6ppSqy39pqgHvW1jLwoRxV/view?usp=sharing",
-      external: true,
-      download: true,
-    },
-    { name: "Home", href: "/" },
+  const navLinks = [
+    { name: "Projects", href: "#projectsection" },
+    { name: "Experience", href: "#experiencesection" },
+    { name: "Skills", href: "#skillssection" },
+    { name: "About", href: "#aboutsection" },
+    { name: "Contact", href: "#contactsection" },
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100 }}
-      className="bg-black/80 backdrop-blur-sm text-white px-6 py-4 flex items-center justify-between rounded-3xl border border-green-500/60 shadow-lg fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50"
+    <motion.header
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-4 left-1/2 -translate-x-1/2 w-[94%] max-w-6xl z-50"
     >
-      {/* Logo */}
-      <Link href="/">
-      <div className="flex items-center gap-2 text-lg font-semibold">
-        <span className="text-green-500 text-xl">{`</>`}</span>
-        <span className="tracking-wide">AkohTech.Dev</span>
-      </div>
-      </Link>
-
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex gap-8">
-        {menuItems.map((item) => (
-          <li key={item.name}>
-            <a
-              href={item.href}
-              target={item.external ? "_blank" : "_self"}
-              rel={item.external ? "noopener noreferrer" : undefined}
-              download={item.download ? true : undefined}
-              className="hover:text-green-500 transition-colors duration-200"
-            >
-              {item.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Social Icons */}
-      <div className="hidden md:flex gap-5 text-lg">
-        <Link
-          href="http://x.com/AkohTech"
-          className="hover:text-green-500 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaXTwitter />
-        </Link>
-        <Link
-          href="https://www.instagram.com/akohtech?igsh=MXQxcW5xdjE2aWcxZw=="
-          className="hover:text-green-500 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram />
-        </Link>
-        <Link
-          href="https://linkedin.com/in/micheal-akoh"
-          className="hover:text-green-500 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin />
-        </Link>
-        <Link
-          href="https://www.facebook.com/AkohTech?mibextid=ZbWKwL"
-          className="hover:text-green-500 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebookF />
-        </Link>
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="md:hidden text-2xl"
+      <nav 
+        aria-label="Main Navigation"
+        className="glass-panel rounded-full px-5 py-3 flex items-center justify-between shadow-2xl border border-zinc-800/80 bg-zinc-950/85 backdrop-blur-md"
       >
-        {menuOpen ? <HiX /> : <HiMenuAlt3 />}
-      </button>
+        {/* Brand Logo */}
+        <Link 
+          href="/" 
+          className="flex items-center gap-2 group transition-transform focus-visible:ring-1 focus-visible:ring-emerald-400 rounded-lg px-1.5 py-0.5"
+        >
+          <span className="font-mono text-emerald-400 text-lg font-bold group-hover:scale-110 transition-transform">
+            &lt;/&gt;
+          </span>
+          <span className="font-semibold text-zinc-100 tracking-tight text-sm sm:text-base group-hover:text-emerald-300 transition-colors">
+            Micheal Akoh
+          </span>
+          <span className="hidden lg:inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono text-emerald-400 font-medium">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            SWE
+          </span>
+        </Link>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-black/95 backdrop-blur-sm text-white px-6 py-4 flex flex-col gap-4 md:hidden border-t border-green-500/60">
-          {menuItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="hover:text-green-500 transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.name}
-            </a>
+        {/* Desktop Nav Links */}
+        <ul className="hidden md:flex items-center gap-6 text-xs lg:text-sm font-medium text-zinc-400">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                className="hover:text-zinc-100 transition-colors py-1 px-1 rounded-md focus-visible:ring-1 focus-visible:ring-emerald-400"
+              >
+                {link.name}
+              </a>
+            </li>
           ))}
-          <div className="flex gap-4 text-lg mt-4">
-            <Link
-              href="http://x.com/AkohTech"
-              className="hover:text-green-500 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaXTwitter />
-            </Link>
-            <Link
-              href="https://www.instagram.com/akohtech?igsh=MXQxcW5xdjE2aWcxZw=="
-              className="hover:text-green-500 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/micheal-akoh
+        </ul>
 
-"
-              className="hover:text-green-500 transition-colors"
+        {/* Right Action Cluster */}
+        <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-2 text-zinc-400 border-r border-zinc-800 pr-3 mr-1">
+            <a
+              href="https://github.com/MichealAkoh"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="p-1.5 hover:text-emerald-400 transition-colors rounded-lg focus-visible:ring-1 focus-visible:ring-emerald-400"
             >
-              <FaLinkedin />
-            </Link>
-            <Link
-              href="https://www.facebook.com/AkohTech?mibextid=ZbWKwL"
-              className="hover:text-green-500 transition-colors"
+              <FaGithub className="text-base" />
+            </a>
+            <a
+              href="https://linkedin.com/in/micheal-akoh"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="p-1.5 hover:text-emerald-400 transition-colors rounded-lg focus-visible:ring-1 focus-visible:ring-emerald-400"
             >
-              <FaFacebookF />
-            </Link>
+              <FaLinkedin className="text-base" />
+            </a>
+            <a
+              href="https://x.com/AkohTech"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter) Profile"
+              className="p-1.5 hover:text-emerald-400 transition-colors rounded-lg focus-visible:ring-1 focus-visible:ring-emerald-400"
+            >
+              <FaXTwitter className="text-base" />
+            </a>
           </div>
+
+          <a
+            href="https://drive.google.com/file/d/1edfv5JOUJO6ppSqy39pqgHvW1jLwoRxV/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-medium transition-all hover:border-emerald-500/50 shadow-sm"
+          >
+            <FiDownload className="text-xs" />
+            <span>Resume</span>
+          </a>
         </div>
-      )}
-    </motion.nav>
+
+        {/* Mobile Menu Trigger */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          className="md:hidden p-2 text-zinc-300 hover:text-white rounded-lg focus-visible:ring-1 focus-visible:ring-emerald-400"
+        >
+          {menuOpen ? <HiX className="text-2xl" /> : <HiMenuAlt3 className="text-2xl" />}
+        </button>
+      </nav>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            className="glass-panel rounded-2xl mt-2 p-5 bg-zinc-950/95 border border-zinc-800 shadow-2xl flex flex-col gap-4 md:hidden"
+          >
+            <ul className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-3 py-2 rounded-lg text-sm font-medium text-zinc-300 hover:bg-zinc-900 hover:text-emerald-400 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="pt-3 border-t border-zinc-800 flex items-center justify-between">
+              <div className="flex items-center gap-3 text-zinc-400 text-lg">
+                <a
+                  href="https://github.com/MichealAkoh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  className="hover:text-emerald-400"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href="https://linkedin.com/in/micheal-akoh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="hover:text-emerald-400"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://x.com/AkohTech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X Profile"
+                  className="hover:text-emerald-400"
+                >
+                  <FaXTwitter />
+                </a>
+              </div>
+
+              <a
+                href="https://drive.google.com/file/d/1edfv5JOUJO6ppSqy39pqgHvW1jLwoRxV/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-medium"
+              >
+                <FiDownload className="text-xs" />
+                <span>Resume</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 

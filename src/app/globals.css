@@ -1,64 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans: 'Fira Code', monospace; /* Programmer-friendly font */
+  --background: #090a0f;
+  --foreground: #f4f4f5;
+  --surface: #111318;
+  --surface-elevated: #171a21;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --accent-emerald: #10b981;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.18);
+  --font-mono: 'Fira Code', monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
+html, body {
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
-}
-
-@keyframes moveGrid {
-  0% { background-position: 0 0; }
-  100% { background-position: 40px 40px; }
-}
-
-.section-spacing {
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: moveGrid 20s linear infinite;
-}
-
-body, html {
-  background-color: rgb(213, 234, 190);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   scroll-behavior: smooth;
+  color-scheme: dark;
+  overflow-x: hidden;
 }
 
-@media (max-width: 640px) {
-  html {
-    font-size: 14px;
-  }
+/* Subtle blueprint background grid */
+.tech-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Improve smooth scrolling */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+/* Ambient glow orb for hero and key focal points */
+.ambient-glow {
+  background: radial-gradient(ellipse 60% 40% at 50% -10%, rgba(16, 185, 129, 0.15), transparent 70%);
 }
 
+/* Glassmorphism surface */
+.glass-panel {
+  background: rgba(17, 19, 24, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.7), 0 0 20px -2px rgba(16, 185, 129, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Reduced motion optimization */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

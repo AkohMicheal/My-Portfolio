@@ -1,9 +1,9 @@
 // src/components/skills/SkillsIcons.tsx
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface SkillsIconsProps {
-  icons: string[];
+  icons: (string | StaticImageData)[];
 }
 
 const SkillsIcons: React.FC<SkillsIconsProps> = ({ icons }) => {
@@ -12,9 +12,9 @@ const SkillsIcons: React.FC<SkillsIconsProps> = ({ icons }) => {
       {icons.map((icon, idx) => (
         <div
           key={idx}
-          className="flex items-center justify-center p-3 rounded-lg bg-gray-50 shadow-sm"
+          className="flex items-center justify-center p-3 rounded-lg bg-zinc-900 border border-zinc-800 shadow-sm"
         >
-          <Image src={icon} alt="skill" className="h-10 object-contain" />
+          <Image src={icon} alt="Skill icon" className="h-10 object-contain" />
         </div>
       ))}
     </div>
