@@ -33,9 +33,10 @@ export const mainprojects: Project[] = [
     description: "Cross-platform gamified task companion for Android and Web. Compiles a single-codebase React 19 / Tailwind v4 app into native Android APKs via Capacitor 8 with Google AdMob rewarded treats monetization, Python Flask REST API, and Supabase PostgreSQL persistence.",
     tags: ["React 19", "Capacitor 8", "Android", "Flask", "Supabase", "AdMob", "Tailwind v4"],
     image: "/assets/project2.png",
-    link: "https://focuspaw.app",
+    link: "https://focuspawakoh.vercel.app/",
     github: "https://github.com/AkohMicheal/AkohFlow"
   },
+
 
   {
     title: "Dual-Stream Deepfake Detection System",
