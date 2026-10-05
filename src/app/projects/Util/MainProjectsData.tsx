@@ -17,7 +17,7 @@ export const mainprojects: Project[] = [
     description: "High-throughput microservices commerce platform coordinated via an Apache Kafka event bus. Built with Turborepo, Next.js 15, and dual Stripe/Paystack webhook verification with HMAC SHA512 buffer validation and idempotency locks.",
     tags: ["Turborepo", "Next.js 15", "Kafka", "Supabase", "Drizzle ORM", "TypeScript", "Docker"],
     image: "/assets/project1.png",
-    link: "https://github.com/AkohMicheal/AkohGrid",
+    link: "https://akoh-grid.vercel.app/",
     github: "https://github.com/AkohMicheal/AkohGrid"
   },
   {
