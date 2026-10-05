@@ -35,9 +35,10 @@ export const projects: Project[] = [
     tags: ["React 19", "Capacitor 8", "Android", "Flask", "Supabase", "AdMob"],
     description: "Cross-platform gamified task companion compiled into native Android packages via Capacitor 8 with Google AdMob rewarded treats monetization, Python Flask REST API, and Supabase PostgreSQL persistence.",
     image: Project2,
-    link: "https://github.com/AkohMicheal/AkohFlow",
+    link: "https://focuspaw.app",
     github: "https://github.com/AkohMicheal/AkohFlow",
   },
+
   {
     title: "Dual-Stream Deepfake Detection System",
     tags: ["TensorFlow", "FastAPI", "Next.js", "OpenCV", "DCT", "XAI"],
