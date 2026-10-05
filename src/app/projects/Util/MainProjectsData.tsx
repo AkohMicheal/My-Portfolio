@@ -59,7 +59,7 @@ export const mainprojects: Project[] = [
     description: "Collaborative full-stack travel coordination and productivity app. Implemented immutable service layers and leveraged React Server Components (RSC) for initial static data hydration to eliminate hydration waterfalls.",
     tags: ["Next.js 16", "TypeScript", "React 19", "Tailwind CSS v4", "RSC"],
     image: "/assets/project4.png",
-    link: "https://github.com/AkohMicheal/govolo",
+    link: "https://govolo.vercel.app/",
     github: "https://github.com/AkohMicheal/govolo"
   },
   {
