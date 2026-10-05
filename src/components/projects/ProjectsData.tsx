@@ -1,4 +1,3 @@
-// src/components/projects/ProjectsData.tsx
 import Project1 from "./../../../public/assets/project1.png";
 import Project2 from "./../../../public/assets/project2.png";
 import Project5 from "./../../../public/assets/project5.png";
@@ -6,55 +5,45 @@ import type { StaticImageData } from "next/image";
 
 export interface Project {
   title: string;
-  subtitle: string;
-  category: string;
-  problem: string;
-  solution: string;
-  outcome: string;
-  metricHighlight: string;
+  description: string;
   tags: string[];
-  image: StaticImageData;
-  liveLink?: string;
-  githubLink?: string;
+  image: string | StaticImageData;
+  link?: string;
+  github?: string;
+  isClientWork?: boolean;
 }
 
 export const projects: Project[] = [
   {
-    title: "Dual-Stream Deepfake Detection Framework",
-    subtitle: "AI Video Integrity & Explainable Forensic Verification",
-    category: "B.Tech Thesis · Applied AI & Computer Vision",
-    problem: "Rapid spread of generative AI deepfakes and manipulated video media posed serious threats to digital fraud prevention without accessible, real-time forensic verification tools.",
-    solution: "Architected a hybrid dual-stream deep learning pipeline fusing spatial facial feature extraction (MTCNN + CNN) with frequency-domain Discrete Cosine Transform (DCT) analysis. Built with a Next.js 15 frontend, FastAPI backend, and Explainable AI (Grad-CAM) diagnostics.",
-    outcome: "Delivered transparent, real-time media verification with visual saliency heatmaps, achieving 98.4% benchmark confidence and sub-second inference.",
-    metricHighlight: "98.4% Detection Accuracy",
-    tags: ["Next.js 15", "FastAPI", "TensorFlow", "OpenCV", "Python", "XAI Grad-CAM", "MTCNN"],
+    title: "AkohGrid — Distributed Event-Driven Commerce Platform",
+    tags: ["Turborepo", "Next.js 15", "Kafka", "Supabase", "Drizzle ORM", "TypeScript"],
+    description: "High-throughput microservices commerce platform coordinated via Apache Kafka event bus. Built with Turborepo, Next.js 15, and dual Stripe/Paystack webhook verification with HMAC SHA512 buffer validation and idempotency locks.",
     image: Project1,
-    liveLink: "https://deepfake-scanner-web.vercel.app/",
-    githubLink: "https://github.com/MichealAkoh",
+    link: "https://github.com/AkohMicheal/AkohGrid",
+    github: "https://github.com/AkohMicheal/AkohGrid",
   },
   {
-    title: "LIT Enterprise Learning Management System",
-    subtitle: "Scalable Hybrid E-Learning & Administration Architecture",
-    category: "Production SaaS · Lampnet Institute",
-    problem: "The institute required a centralized, low-latency platform to coordinate course delivery, student cohorts, dynamic registration workflows, and progress tracking across concurrent online and offline programs.",
-    solution: "Engineered a full-stack LMS utilizing Node.js, Express, MongoDB, and Socket.io for real-time state synchronization. Dockerized the service architecture for scalable, reproducible deployments.",
-    outcome: "Enabled simultaneous management of 500+ student enrollments, instant progress telemetry, and zero-downtime course delivery across multi-track cohorts.",
-    metricHighlight: "500+ Concurrent Students",
-    tags: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Docker", "REST APIs"],
+    title: "FMCG Festival — High-Concurrency Ticketing Platform",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Drizzle ORM", "Paystack", "Sanity"],
+    description: "Production multi-tier event ticketing platform. Configured zero-budget edge routing via DNS CNAME automation, decoupled content delivery through Sanity headless CMS to achieve LCP < 1.1s, and secured idempotent Paystack payment processing.",
     image: Project5,
-    liveLink: "https://institute.lampnets.com/",
-    githubLink: "https://github.com/MichealAkoh",
+    link: "https://fmcg-festival.vercel.app/",
+    isClientWork: true,
   },
   {
-    title: "Cloud-Native E-Commerce Infrastructure",
-    subtitle: "High-Availability Retail Deployment on AWS",
-    category: "Cloud Architecture & DevOps · AWS",
-    problem: "A growing commercial retail business faced potential downtime and database bottlenecks during traffic surges on unmanaged single-server hosting.",
-    solution: "Designed and independently provisioned a resilient AWS infrastructure separating web compute (EC2 cluster) from managed relational databases (RDS MySQL/PostgreSQL). Hardened Linux LAMP stack with automated CI/CD deployment pipelines.",
-    outcome: "Achieved 99.9% uptime SLA, automated database snapshots, and eliminated manual deployment overhead with zero performance regressions.",
-    metricHighlight: "99.9% Production Uptime",
-    tags: ["AWS EC2", "AWS RDS", "PrestaShop", "Linux/LAMP", "Docker", "CI/CD", "DevOps"],
+    title: "AkohFlow (FocusPaws) — Cross-Platform Productivity Engine",
+    tags: ["React 19", "Capacitor 8", "Android", "Flask", "Supabase", "AdMob"],
+    description: "Cross-platform gamified task companion compiled into native Android packages via Capacitor 8 with Google AdMob rewarded treats monetization, Python Flask REST API, and Supabase PostgreSQL persistence.",
     image: Project2,
-    githubLink: "https://github.com/MichealAkoh",
+    link: "https://github.com/AkohMicheal/AkohFlow",
+    github: "https://github.com/AkohMicheal/AkohFlow",
+  },
+  {
+    title: "Dual-Stream Deepfake Detection System",
+    tags: ["TensorFlow", "FastAPI", "Next.js", "OpenCV", "DCT", "XAI"],
+    description: "Dual-stream deep learning platform combining spatial CNNs with frequency-domain DCT spectrum analysis to detect manipulated media. Features real-time Grad-CAM explainable AI heatmaps and asynchronous frame inference.",
+    image: Project1,
+    link: "https://deepfake-scanner-web.vercel.app/",
+    github: "https://github.com/AkohMicheal/Deepfake-Complete-WebApp-Project",
   },
 ];

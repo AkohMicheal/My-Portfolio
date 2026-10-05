@@ -1,93 +1,88 @@
-// src/components/hero/HeroText.tsx
 'use client';
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaGithub, FaArrowRight } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const HeroText: React.FC = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="text-left"
+      transition={{ duration: 0.8 }}
+      className="text-center md:text-left"
     >
-      {/* Status Eyebrow Badge */}
-      <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 mb-6">
+      {/* Availability Status Badge */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-4"
+      >
         <span className="relative flex h-2 w-2">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
-        <span className="text-xs font-mono font-medium text-emerald-400 tracking-wide">
-          AVAILABLE FOR SOFTWARE ROLES
-        </span>
-        <span className="text-zinc-600 hidden sm:inline">•</span>
-        <span className="text-xs text-zinc-400 font-mono hidden sm:inline">
-          Lagos, NG · Global Remote
-        </span>
-      </div>
+        Full-Stack Software Engineer · Open to Global Remote Roles
+      </motion.div>
 
-      {/* Main Display Headline */}
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.08] mb-6">
-        Architecting scalable <br className="hidden sm:inline" />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-200">
-          full-stack systems
-        </span>{" "}
-        &amp; applied AI.
-      </h1>
+      {/* Main Headline */}
+      <motion.h1 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className="text-4xl sm:text-5xl font-extrabold text-gray-950 leading-[1.15] tracking-tight"
+      >
+        Hi, I&apos;m <span className="text-green-600">Micheal Akoh-Idoko</span>
+      </motion.h1>
 
-      {/* Narrative Subtext */}
-      <p className="text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed mb-8">
-        Hi, I&apos;m <strong className="text-zinc-100 font-semibold">Micheal Akoh</strong> — a Software Engineer focused on building high-performance web architectures, cloud infrastructure on AWS, and real-time deep learning applications. Currently engineering enterprise client platforms at <span className="text-zinc-200 font-medium">Lampnet Technologies</span>.
-      </p>
+      {/* Senior Professional Engineering Copy */}
+      <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed"
+      >
+        I architect and engineer resilient full-stack systems, distributed microservices, and high-performance web applications. Specialized in <strong>React 19</strong>, <strong>Next.js (App Router)</strong>, <strong>TypeScript</strong>, <strong>Apache Kafka</strong>, and <strong>Supabase / Drizzle ORM</strong> with cryptographic payment idempotency.
+      </motion.p>
 
-      {/* Action Buttons */}
-      <div className="flex flex-wrap items-center gap-3.5 mb-10">
+      {/* CTAs & Social Links */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start"
+      >
+        <Link href="/projects">
+          <button className="px-6 py-2.5 bg-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-green-700 transition cursor-pointer">
+            View Projects
+          </button>
+        </Link>
+        <Link href="#contactsection" scroll={true}>
+          <button className="px-6 py-2.5 border border-green-600 text-green-700 font-medium rounded-lg hover:bg-green-50 transition cursor-pointer">
+            Contact Me
+          </button>
+        </Link>
         <a 
-          href="#projectsection"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 active:scale-[0.98]"
-        >
-          <span>Explore Case Studies</span>
-          <FaArrowRight className="text-xs" />
-        </a>
-
-        <a 
-          href="#contactsection"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-sm transition-all duration-200 active:scale-[0.98]"
-        >
-          <HiOutlineMail className="text-base text-emerald-400" />
-          <span>Get in Touch</span>
-        </a>
-
-        <a 
-          href="https://github.com/MichealAkoh" 
+          href="https://github.com/AkohMicheal" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label="Visit Micheal Akoh's GitHub Profile"
-          className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-zinc-900/50 hover:bg-zinc-800/80 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 text-sm font-medium transition-all"
+          className="inline-flex items-center justify-center px-4 py-2.5 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition gap-2"
         >
-          <FaGithub className="text-base" />
-          <span className="hidden sm:inline">GitHub</span>
+          <FaGithub className="text-lg" />
+          <span>GitHub</span>
         </a>
-      </div>
-
-      {/* Key Metric Telemetry Strip */}
-      <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-800/70 max-w-lg">
-        <div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-zinc-100 tracking-tight">3+</div>
-          <div className="text-xs text-zinc-400 font-medium mt-0.5">Enterprise Clients</div>
-        </div>
-        <div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-400 tracking-tight">98.4%</div>
-          <div className="text-xs text-zinc-400 font-medium mt-0.5">AI Thesis Accuracy</div>
-        </div>
-        <div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-zinc-100 tracking-tight">99.9%</div>
-          <div className="text-xs text-zinc-400 font-medium mt-0.5">Cloud Uptime SLA</div>
-        </div>
-      </div>
+        <a 
+          href="https://linkedin.com/in/micheal-akoh" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="inline-flex items-center justify-center px-4 py-2.5 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition gap-2"
+        >
+          <FaLinkedin className="text-lg text-[#0A66C2]" />
+          <span>LinkedIn</span>
+        </a>
+      </motion.div>
     </motion.div>
   );
 };
